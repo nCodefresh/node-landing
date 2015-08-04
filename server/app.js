@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 // settings
 var settings = {
 	'static' 	: '/../web/',
-	'db' 		: 'mongodb://localhost/launch'	
+	'db' 		: process.env.MONGO_URI
 }
 
 // initialize & configure the app
@@ -50,4 +50,4 @@ app.post('/api/v1/launch/users', function(req,res) {
 app.use(function (req,res){res.end('404 - Page not found');});
 
 // Start the server
-app.listen(3000);
+app.listen(9000);
